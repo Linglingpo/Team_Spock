@@ -5,7 +5,8 @@ class Level {
   Spock spock;  
   //  Screen screen;
   //  Timer timer; 
- boolean proceedToNextLevel = false; // controls event change  
+boolean proceedToNextLevel = false; // controls event change  
+Food[] foodBasket = new Food[7];
 
     // ========================================================================
   // Constructor
@@ -33,6 +34,8 @@ class Level {
       sceneBg = loadImage("lvl_01.jpg");
       image(sceneBg, 0, 0); //show the image
       displayForeLevel1();
+      setFoodBasketLevel1();
+      
     }
   }
 
@@ -73,6 +76,21 @@ void displayForeLevel1() {
     }
   
   }
+  
+  
+  
+  
+void setFoodBasketLevel1() {
+  foodBasket[0] = new Food(false, 1, -25, "Jumbo Vulcan Mollusk", "jumbovulcanmollusk.png"); // JUMBO MOLLUSK
+  foodBasket[1] = new Food(false, 2, 20, "Gespar", "jumbovulcanmollusk.png"); // JUMBO MOLLUSK
+  foodBasket[2] = new Food(false, 0, 5, "Earl Grey Tea. Hot", "earlgreyhot.png"); // EARLGREY
+  foodBasket[3] = new Food(false, );
+}
+  
+  
+  
+  
+  
 }
 // end of the "Level" class
 
