@@ -6,14 +6,15 @@ Boolean nowSpockOn = false;
 
 int scene = 0;
 
-boolean flag = true;
+//food selection
+boolean selectedFood01 = false;
 
 Level levels;
 
 
 void setup() {
   size(1280, 800);
-  textSize(30);
+  textSize(20);
   fill(0);
   sceneBg = loadImage("intro.jpg");
   keyGraphic = loadImage("start.png");
@@ -57,16 +58,13 @@ void keyReleased() {
   if (keyCode == 83) {     
     activeKeys[2] = false;
   }
-  nowSpockOn = false;
 }
 
 void keyEventControl() {
   if (activeKeys[0] == true && activeKeys[1] == false && activeKeys[2] == true) {
     nowSpockOn = true;
-    flag = true;
   } else {
     nowSpockOn = false;
-    flag = false;
   }
   //  printArray(activeKeys);
   //  println(nowSpockOn);
