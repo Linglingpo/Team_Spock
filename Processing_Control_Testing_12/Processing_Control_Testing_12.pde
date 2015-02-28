@@ -13,24 +13,24 @@ void draw() {
   background(100);
   image(keyGraphic, 0, 0); //show the image
   keyEventControl();
-  desplay();
+  display();
 }
 
+//------------ Key Event ------------//
 void keyPressed() {
   //W
   if (keyCode == 87) {     
     activeKeys[0] = true;
   }
   //A
-    if (keyCode == 65) {     
+  if (keyCode == 65) {     
     activeKeys[1] = true;
   }
   //S
-    if (keyCode == 83) {     
+  if (keyCode == 83) {     
     activeKeys[2] = true;
-    }
+  }
 }
-
 
 void keyReleased() {
   //W
@@ -38,38 +38,28 @@ void keyReleased() {
     activeKeys[0] = false;
   }
   //A
-    if (keyCode == 65) {     
+  if (keyCode == 65) {     
     activeKeys[1] = false;
   }
   //S
-    if (keyCode == 83) {     
+  if (keyCode == 83) {     
     activeKeys[2] = false;
-    }
+  }
 }
 
-//----------------------------------------- When keypressed, show the image
-
 void keyEventControl() {
-  if (activeKeys[0] == false && activeKeys[1] == true && activeKeys[2] == false) {
+  if (activeKeys[0] == true && activeKeys[1] == false && activeKeys[2] == true) {
     nowSpockOn = true;
   } else {
     nowSpockOn = false;
   }
-
-  //  if (aClose && wClose == false && sClose == false) {
-  //    nowSpockOn = true;
-  //  } else {
-  //    nowSpockOn = false;
-  //  }
-  //  println (wClose);
-  //  println (aClose);
-  //  println (sClose);
-
   printArray(activeKeys);
   println(nowSpockOn);
 }
 
-void desplay() {
+//------------ When keypressed, show the image ------------//
+
+void display() {
   if (nowSpockOn) {
     keyGraphic = loadImage("On.png");
   } else {
