@@ -81,10 +81,11 @@ void displayForeLevel1() {
   
   
 void setFoodBasketLevel1() {
-  foodBasket[0] = new Food(false, 1, -25, "Jumbo Vulcan Mollusk", "jumbovulcanmollusk.png"); // JUMBO MOLLUSK
-  foodBasket[1] = new Food(false, 2, 20, "Gespar", "jumbovulcanmollusk.png"); // JUMBO MOLLUSK
-  foodBasket[2] = new Food(false, 0, 5, "Earl Grey Tea. Hot", "earlgreyhot.png"); // EARLGREY
-  foodBasket[3] = new Food(false, );
+  foodBasket[0] = new Food(false, 1, -25, "Jumbo Vulcan Mollusk", "jumbovulcanmollusk.png", "It is not logical to want to eat mushy moist mollusks in the morning."); // JUMBO MOLLUSK
+  foodBasket[1] = new Food(false, 2, 20, "Gespar", "jumbovulcanmollusk.png", "It is only logical to eat a slice of gespar fruit in the morning."); // JUMBO MOLLUSK
+  foodBasket[2] = new Food(false, 0, 5, "Earl Grey Tea. Hot", "earlgreyhot.png", "I believe you are confusing me with a certain Enterprise captain. No, not that Enterprise Captain."); // EARLGREY
+  foodBasket[3] = new Food(false, -2, 35, "Lucky Charms", "luckycharms.png", "This is not a logical option for breakfast."); // LUCKY CHARMS
+  
 }
   
   
