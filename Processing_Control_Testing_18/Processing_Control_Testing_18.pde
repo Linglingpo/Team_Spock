@@ -6,12 +6,15 @@ Boolean nowSpockOn = false;
 
 int scene = 0;
 
+boolean flag = true;
+
 Level levels;
 
 
 void setup() {
   size(1280, 800);
-  textSize(12);
+  textSize(30);
+  fill(0);
   sceneBg = loadImage("intro.jpg");
   keyGraphic = loadImage("start.png");
   levels = new Level();
@@ -19,31 +22,10 @@ void setup() {
 
 void draw() {
   background(100);
-//  changeScenes();
+  //  changeScenes();
   keyEventControl();
   levels.display();
 }
-
-////------------ change scenes ------------//
-//
-//void changeScenes() {
-//  //-- Intro --//
-//  if (scene == 0) {
-//    image(sceneBg, 0, 0); //show the image
-//    image(keyGraphic, 0, 0); //show the image
-//    if (nowSpockOn) {
-//      scene = 1;
-//      nowSpockOn = false;
-//    }
-//  }
-//  //-- Lvl 01 --//
-//
-//  else {
-//    sceneBg = loadImage("lvl_01.jpg");
-//    image(sceneBg, 0, 0); //show the image
-//    image(keyGraphic, 0, 0); //show the image
-//  }
-//}
 
 
 //------------ Key Event ------------//
@@ -75,26 +57,18 @@ void keyReleased() {
   if (keyCode == 83) {     
     activeKeys[2] = false;
   }
+  nowSpockOn = false;
 }
 
 void keyEventControl() {
   if (activeKeys[0] == true && activeKeys[1] == false && activeKeys[2] == true) {
     nowSpockOn = true;
+    flag = true;
   } else {
     nowSpockOn = false;
+    flag = false;
   }
-  printArray(activeKeys);
-  println(nowSpockOn);
+  //  printArray(activeKeys);
+  //  println(nowSpockOn);
 }
-
-////------------ When keypressed, show the image ------------//
-//
-//void display() {
-//  if (nowSpockOn) {
-//    keyGraphic = loadImage("On.png");
-//  } else {
-//    keyGraphic = loadImage("down.png");
-//  }
-//  image(keyGraphic, 0, 0); //show the image
-//}
 
