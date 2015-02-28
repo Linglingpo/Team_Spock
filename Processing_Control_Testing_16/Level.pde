@@ -6,7 +6,7 @@ class Level {
   //  Screen screen;
   //  Timer timer; 
 boolean proceedToNextLevel = false; // controls event change  
-Food[] foodBasket = new Food[7];
+Food[] foodBasket;
 
     // ========================================================================
   // Constructor
@@ -81,11 +81,12 @@ void displayForeLevel1() {
   
   
 void setFoodBasketLevel1() {
+  foodBasket[] = new Food[6]
   foodBasket[0] = new Food(false, 1, -25, "Jumbo Vulcan Mollusk", "jumbovulcanmollusk.png", "It is not logical to want to eat mushy moist mollusks in the morning."); // JUMBO MOLLUSK
   foodBasket[1] = new Food(false, 2, 20, "Gespar", "jumbovulcanmollusk.png", "It is only logical to eat a slice of gespar fruit in the morning."); // JUMBO MOLLUSK
   foodBasket[2] = new Food(false, 0, 5, "Earl Grey Tea. Hot", "earlgreyhot.png", "I believe you are confusing me with a certain Enterprise captain. No, not that Enterprise Captain."); // EARLGREY
   foodBasket[3] = new Food(false, -2, 35, "Lucky Charms", "luckycharms.png", "This is not a logical option for breakfast."); // LUCKY CHARMS
-  
+  foodBasket[4] = new Food(false, 3, -30, "Vulcan Lettuce", "vulcanlettuce.png", "It is not logical for breakfast to be so tasteless."); // VULCAN LETTUCE
 }
   
   
