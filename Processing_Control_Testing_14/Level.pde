@@ -2,7 +2,7 @@ class Level {
   // ========================================================================
   // Properties
   // ========================================================================
-  //  Spock spock;  
+  Spock spock;  
   //  Screen screen;
   //  Timer timer; 
   boolean proceedToNextLevel = false; // controls event change  
@@ -16,7 +16,25 @@ class Level {
   // ========================================================================
   // Methods
   // ========================================================================
-
+  
+  
+  boolean evaluateScore(int heart, int emo) {
+    spock.changeHearts(heart);
+    spock.changeEmo(emo);
+    
+    // WIN CONDITION 
+    
+    int h = spock.getHearts();
+    int e = spock.getEmo();
+    
+    if (h == 10 && e >= 60) {
+      return true;
+    } else {
+      return false;
+    }
+  
+  }
+  
   void display() {
     //------------ change scenes ------------//
     //-- Intro --//
@@ -48,9 +66,6 @@ void displayForeIntro() {
   image(keyGraphic, 0, 0); //show the image
 }
 
-
-  //  int calculateScore(int heart, int emo) {
-  //  }
 }
 // end of the "Level" class
 

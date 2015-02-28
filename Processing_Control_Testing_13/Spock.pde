@@ -25,14 +25,14 @@ class Spock {
 
   void changeHearts(int h) {
     hearts = hearts + h;
-    if (hearts < 10) {
+    if (hearts > 10) {
       hearts = 10; // HEART COUNT SHOULD NEVER BE HIGHER THAN 10
     }
   }
   
   void changeEmo(int e) {
     emo = emo + e;
-    if (emo < 100) {
+    if (emo > 100) {
       emo = 100;    // EMOTIONAL PERCENTAGE SHOULD NEVER BE HIGHER THAN 100
     }
   }

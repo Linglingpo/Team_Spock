@@ -23,6 +23,14 @@ class Spock {
   // Methods
   // ========================================================================
 
+  int getHearts() {
+    return hearts;
+  }
+  
+  int getEmo() {
+    return emo;
+  }
+
   void changeHearts(int h) {
     hearts = hearts + h;
     if (hearts < 10) {
