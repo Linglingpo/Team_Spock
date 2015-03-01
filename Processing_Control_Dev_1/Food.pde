@@ -41,7 +41,7 @@ class Food {
     //Timer
     int passedTime = millis() - savedTime;
     //For display/slid the image
-    image(foodImages[imageIndex], 0, 0, 200, 200);    
+    image(foodImages[imageIndex], 300, 300, 200, 200);    
     if (passedTime > slidTime) {
       imageIndex++;
       savedTime = millis();
