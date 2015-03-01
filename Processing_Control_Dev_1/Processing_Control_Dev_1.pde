@@ -15,7 +15,7 @@ Level levels;
 void setup() {
   size(1280, 800);
   textSize(50);
-  fill(0);
+  fill(255);
   sceneBg = loadImage("intro.jpg");
   keyGraphic = loadImage("start.png");
   levels = new Level();
