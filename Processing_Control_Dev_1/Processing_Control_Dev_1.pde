@@ -10,7 +10,7 @@ int scene = 0;
 boolean selectedFood = false;
 
 Level levels;
-
+Spock spock;
 
 void setup() {
   size(1280, 800);
@@ -19,15 +19,22 @@ void setup() {
   sceneBg = loadImage("start_screen.png");
  // keyGraphic = loadImage("start_scene.png");
   levels = new Level();
+  spock = new Spock();
 }
 
 void draw() {
   background(100);
   keyEventControl();
   levels.run();
+    heathBar();
   //levels.display();
 }
 
+void heathBar() {
+  fill(0, 255, 0);
+  noStroke();
+  rect(0, 0, width, 150);
+}
 
 //------------ Key Event ------------//
 void keyPressed() {
@@ -63,8 +70,7 @@ void keyReleased() {
 void keyEventControl() {
   if (activeKeys[0] == true && activeKeys[1] == false && activeKeys[2] == true) {
     nowSpockOn = true;
-  } 
-  else {
+  } else {
     nowSpockOn = false;
   }
   //  printArray(activeKeys);
