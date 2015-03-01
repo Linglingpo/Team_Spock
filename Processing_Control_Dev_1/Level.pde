@@ -145,7 +145,7 @@ class Level {
   void display() {
     //------------ change scenes ------------//
     //display the bg
-    image(sceneBg, 0, 0);
+    image(sceneBg, 0, 0, width, height);
 
     //-- Intro --//
     if (scene == 0) {
@@ -159,7 +159,7 @@ class Level {
     }
     //-- Lvl 01 --//
     else if (scene == 1) {
-<<<<<<< HEAD
+
       if (gmaeTimerSec > endTimeSec) {
         scene = 2;
       } else {
@@ -179,7 +179,7 @@ class Level {
           image(spockImages[0], 1090, 30, 100, 100);
         }
         if (spockLvl01.getHearts() >= 5) {
-=======
+
       player.pause();
       playerLvl01.play();
       //player = minim.loadFile("ambient_during_game.mp3");
@@ -196,7 +196,7 @@ class Level {
          image(spockImages[2], 1090, 30, 100, 100);    
       }
       if (spockLvl01.getHearts() >= 5) {
->>>>>>> origin/master
+
           image(healthImages[1], 900, 40, 75, 75);
         }
         if (spockLvl01.getHearts() < 5) {
