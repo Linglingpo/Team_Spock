@@ -4,7 +4,7 @@ class Food {
   // ========================================================================
 
   String[] foodBasketLvl01 = {
-    "01.png", "02.png", "03.png", "04.png", "05.png", "06.png"
+    "salmon.png", "alien meat.png", "chocolate.png", "pancakes.png", "sushi.png", "tart.png"
   }; 
   boolean[] booleanFB01 = new boolean [foodBasketLvl01.length];
 
@@ -41,7 +41,7 @@ class Food {
     //Timer
     int passedTime = millis() - savedTime;
     //For display/slid the image
-    image(foodImages[imageIndex], 300, 300, 200, 200);    
+    image(foodImages[imageIndex], 300, 300, 250, 250);    
     if (passedTime > slidTime) {
       imageIndex++;
       savedTime = millis();
