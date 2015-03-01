@@ -27,5 +27,11 @@ class Food {
   void selectItem(boolean _tempSelect) {
     selected = _tempSelect;
   }
+  String getName() {
+    return name;
+  }
+  String getPath() {
+    return graphicPath;
+  }
 }//end of the "Food" class
 

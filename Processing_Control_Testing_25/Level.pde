@@ -7,12 +7,18 @@ class Level {
   int selectionCounter;
   Food[] foodBasket = new Food[6];
   int heart = 0;
+  String foodItem1;
+  PImage[] images = new PImage[6]; // images of the food
+  boolean first = true;
+  int start = 0; // start 
+
+
 
   // ========================================================================
   // Constructor
   // ========================================================================
   Level() {
-    foodImg = loadImage("tomoto.png");
+    foodItem1 = "Food : ";
     selectionCounter = 0;
   }  
 
@@ -31,13 +37,12 @@ class Level {
       }
     }
     //-- Lvl 01 --//
-    else {
+    else if (scene == 1) {
       sceneBg = loadImage("lvl_01.jpg");
       image(sceneBg, 0, 0); //show the image
-      displayForeLevel1();
       setFoodBasketLevel1();
-      printArray(foodBasket);
-    }
+      displayForeLevel1();
+    } //else {}
   }
 
   //------------ When keypressed, show the image ------------//
@@ -53,18 +58,29 @@ class Level {
 
 
   //-- level 01 --//
-  void displayForeLevel1() {
+  void displayForeLevel1() {    
+    if (first) {
+      initializeImagesOfFood(); 
+      first = false;
+    }
     selectionCounter ++;
+    moveImagesOfFood();
+    
     //Start the level 1 after counter > 10
-    if (selectionCounter > 20 ) {
+    if (selectionCounter > 10 ) {
       if (nowSpockOn) {
         keyGraphic = loadImage("haha_lvl1.png");
         selectedFood01 = true;
         updateHearts();
         selectedFood01 = false;
         nowSpockOn = false;
-        //reset the selection cunter to 0;
+        //reset the selection counter to 0;
         selectionCounter = 0;
+      
+       foodItem1 = foodItem1 + foodBasket[0].getName();
+       println(foodBasket[0].getName());
+      
+    
       } else {
         keyGraphic = loadImage("poop_lvl1.png");
       }
@@ -72,7 +88,7 @@ class Level {
     }
     //    displayHeartCounter();
     println(selectionCounter);
-    image(foodImg, 500, 300);
+//    image(foodImg, 500, 300);
     text("Heart: " + heart, 500, 200);
   }
 
@@ -80,6 +96,30 @@ class Level {
     if (selectedFood01) {
       heart = heart + 1;
     }
+  }
+
+  void initializeImagesOfFood() {
+    int start = 150;
+    int x = start;
+    int y = 300;
+    for (int i=0;i<6;i++) {
+      images[i] = loadImage(foodBasket[i].getPath());
+      images[i].resize(200,0);
+      image(images[i], x, y);
+      x = x + 220;
+    }
+  }
+  
+  void moveImagesOfFood() {
+    int x = start;
+    int y = 300;
+    for (int i = 0; i <6; i++) {
+      images[i] = loadImage(foodBasket[i].getPath());
+      images[i].resize(200,0);
+      image(images[i], x, y);
+      x = x + 220;
+    }
+    start++;
   }
 
   void setFoodBasketLevel1() {
