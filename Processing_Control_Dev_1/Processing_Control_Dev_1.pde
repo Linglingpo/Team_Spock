@@ -2,6 +2,9 @@ PImage keyGraphic;
 PImage sceneBg;
 PImage bgMask;
 
+PImage winImg;
+PImage lostImg;
+
 boolean[] activeKeys = new boolean[3];
 Boolean nowSpockOn = false;
 
@@ -12,7 +15,9 @@ boolean selectedFood = false;
 
 Level levels;
 Spock spock;
-//lala
+
+int gmaeTimerSec = 0;
+int endTimeSec = 60;
 
 /*-------------------------------------------
  Background Music
@@ -28,7 +33,6 @@ AudioPlayer player;
 AudioPlayer playerLvl01;
 
 void setup() {
-
   /*-------------------------------------------
    Background Music
    -------------------------------------------*/
@@ -40,22 +44,25 @@ void setup() {
   //calling play() function from "Minim" to play the music
   player.play();
 
-
   size(1280, 800);
   textSize(50);
   fill(255);
   sceneBg = loadImage("start_screen.png");
   bgMask = loadImage("background3.png");
+
+  winImg = loadImage("success_end.png");
+  lostImg = loadImage("fail_end.png");
+
   // keyGraphic = loadImage("start_scene.png");
   levels = new Level();
   spock = new Spock();
 }
 
 void draw() {
+  gmaeTimerSec = millis()/1000;
   background(100);
   keyEventControl();
   levels.run();
-  //levels.display();
 }
 
 
