@@ -161,14 +161,14 @@ class Level {
       //display spock
       spockLvl01.display();
       displayLevel01();
-      if (spockLvl01.getEmo() > 65) {
-         image(spockImages[2], 1090, 30, 100, 100);    
-      }
       if (spockLvl01.getEmo() >= 45) {
          image(spockImages[1], 1090, 30, 100, 100);    
       }
       if (spockLvl01.getEmo() < 45) {
          image(spockImages[0], 1090, 30, 100, 100);    
+      }
+      if (spockLvl01.getEmo() > 65) {
+         image(spockImages[2], 1090, 30, 100, 100);    
       }
       if (spockLvl01.getHearts() >= 5) {
           image(healthImages[1], 900, 40, 75, 75);
@@ -244,7 +244,7 @@ class Level {
   }
   void firstLevelFood7() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(-2);
+    spockLvl01.changeHearts(-3);
     spockLvl01.changeEmo(35); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
@@ -268,13 +268,13 @@ class Level {
   }
   void firstLevelFood11() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(3);
+    spockLvl01.changeHearts(2);
     spockLvl01.changeEmo(-25); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood12() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(2);
+    spockLvl01.changeHearts(1);
     spockLvl01.changeEmo(20); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
