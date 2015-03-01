@@ -162,39 +162,43 @@ class Level {
       if (gmaeTimerSec > endTimeSec) {
         scene = 2;
       } else {
-          player.pause();
-          playerLvl01.play();
-          //player = minim.loadFile("ambient_during_game.mp3");
-          //display spock
-          spockLvl01.display();
-          displayLevel01();
-          if (spockLvl01.getEmo() < 45) {
-            image(spockImages[0], 1090, 30, 100, 100);
-          }
-          if (spockLvl01.getEmo() >= 45) {
-            image(spockImages[1], 1090, 30, 100, 100);
-          }
-          if (spockLvl01.getEmo() > 65) {
-            image(spockImages[2], 1090, 30, 100, 100);
-          }
-          if (spockLvl01.getHearts() >= 5) {
-            image(healthImages[1], 900, 40, 75, 75);
-          }
-          if (spockLvl01.getHearts() < 5) {
-            image(healthImages[0], 900, 40, 75, 75);
-          }
-        }//end of get Heart
+        player.pause();
+        playerLvl01.play();
+        //player = minim.loadFile("ambient_during_game.mp3");
+        //display spock
+        spockLvl01.display();
+        displayLevel01();
+        if (spockLvl01.getEmo() < 45) {
+          image(spockImages[0], 1090, 30, 100, 100);
+        }
+        if (spockLvl01.getEmo() >= 45) {
+          image(spockImages[1], 1090, 30, 100, 100);
+        }
+        if (spockLvl01.getEmo() > 65) {
+          image(spockImages[2], 1090, 30, 100, 100);
+        }
+        if (spockLvl01.getHearts() >= 5) {
+          image(healthImages[1], 900, 40, 75, 75);
+        }
+        if (spockLvl01.getHearts() < 5) {
+          image(healthImages[0], 900, 40, 75, 75);
+        }
+      }//end of get Heart
     }
     //-- Win/Lost --//
     else if (scene == 2) {
+      player.pause();
+      playerLvl01.pause();
       if (spockLvl01.hearts >= 7 && spockLvl01.emo >= 70) {
         image(winImg, 0, 0, width, height);
+        playerWin.play();
       } else {
         image(lostImg, 0, 0, width, height);
+        playerLost.play();
       }
     }
   }
-  
+
 
   //-- Intro --//
   void displayIntro() {

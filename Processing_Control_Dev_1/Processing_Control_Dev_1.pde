@@ -31,6 +31,8 @@ Minim minim;
 //variable to the audio player
 AudioPlayer player;
 AudioPlayer playerLvl01;
+AudioPlayer playerWin;
+AudioPlayer playerLost;
 
 void setup() {
   /*-------------------------------------------
@@ -41,6 +43,10 @@ void setup() {
   //loading the music file from the data folder
   player = minim.loadFile("beginning_background.mp3");
   playerLvl01 = minim.loadFile("ambient_during_game.mp3");
+
+  playerWin = minim.loadFile("you_win.wav");
+  playerLost = minim.loadFile("you_lose.wav");
+
   //calling play() function from "Minim" to play the music
   player.play();
 
