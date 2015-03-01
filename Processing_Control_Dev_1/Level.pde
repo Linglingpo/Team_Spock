@@ -161,11 +161,11 @@ class Level {
       //display spock
       spockLvl01.display();
       displayLevel01();
-      if (spockLvl01.getEmo() >= 45) {
-         image(spockImages[1], 1090, 30, 100, 100);    
-      }
       if (spockLvl01.getEmo() < 45) {
          image(spockImages[0], 1090, 30, 100, 100);    
+      }
+      if (spockLvl01.getEmo() >= 45) {
+         image(spockImages[1], 1090, 30, 100, 100);    
       }
       if (spockLvl01.getEmo() > 65) {
          image(spockImages[2], 1090, 30, 100, 100);    
