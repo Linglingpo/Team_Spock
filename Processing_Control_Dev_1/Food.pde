@@ -46,10 +46,6 @@ class Food {
     timertest1++;
     //Timer
     int passedTime = millis() - savedTime;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     //For display/slid the image
     image(foodImages[imageIndex], 290, 280, 280, 280);    
     if (passedTime > slidTime) {
@@ -59,10 +55,6 @@ class Food {
     if (imageIndex>foodBasketLvl01.length-1) {
       imageIndex = 0;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     displayInfoFB01();
     startLvl1 = true;
     if (timertest1 >= timertest) {   
@@ -82,35 +74,65 @@ class Food {
     int infoX = 10;
     int infoY = 100;
     if (booleanFB01[0]) {
-      text("Food 01 is ON", infoX, infoY);
+      //text("Food 01 is ON", infoX, infoY);
       //--- Milin ---//
       selectedFoodCounter = 0;
       booleanFB01[0] = false;
     }
     if (booleanFB01[1]) {
-      text("Food 02 is ON", infoX, infoY*2);
+      //text("Food 02 is ON", infoX, infoY*2);
       selectedFoodCounter = 1;
       booleanFB01[1] = false;
     }
     if (booleanFB01[2]) {
-      text("Food 03 is ON", infoX, infoY*3);
+      //text("Food 03 is ON", infoX, infoY*3);
       selectedFoodCounter = 2;
       booleanFB01[2] = false;
     }
     if (booleanFB01[3]) {
-      text("Food 04 is ON", infoX, infoY*4);
+      //text("Food 04 is ON", infoX, infoY*4);
       selectedFoodCounter = 3;
       booleanFB01[3] = false;
     }
     if (booleanFB01[4]) {
-      text("Food 05 is ON", infoX, infoY*5);
+      //text("Food 05 is ON", infoX, infoY*5);
       selectedFoodCounter = 4;
       booleanFB01[4] = false;
     }
     if (booleanFB01[5]) {
-      text("Food 06 is ON", infoX, infoY*6);
+      //text("Food 06 is ON", infoX, infoY*6);
       selectedFoodCounter = 5;
       booleanFB01[5] = false;
+    }
+    if (booleanFB01[6]) {
+      //text("Food 06 is ON", infoX, infoY*6);
+      selectedFoodCounter = 6;
+      booleanFB01[6] = false;
+    }
+    if (booleanFB01[7]) {
+      //text("Food 06 is ON", infoX, infoY*6);
+      selectedFoodCounter = 7;
+      booleanFB01[7] = false;
+    }
+    if (booleanFB01[8]) {
+      //text("Food 06 is ON", infoX, infoY*6);
+      selectedFoodCounter = 8;
+      booleanFB01[8] = false;
+    }
+    if (booleanFB01[9]) {
+      //text("Food 06 is ON", infoX, infoY*6);
+      selectedFoodCounter = 9;
+      booleanFB01[9] = false;
+    }
+    if (booleanFB01[10]) {
+      //text("Food 06 is ON", infoX, infoY*6);
+      selectedFoodCounter = 10;
+      booleanFB01[10] = false;
+    }
+    if (booleanFB01[11]) {
+      //text("Food 06 is ON", infoX, infoY*6);
+      selectedFoodCounter = 11;
+      booleanFB01[11] = false;
     }
   }
 

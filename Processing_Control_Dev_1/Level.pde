@@ -15,7 +15,13 @@ class Level {
   int pressed3 = 0;
   int pressed4 = 0;
   int pressed5 = 0;
-
+  int pressed6 = 0;
+  int pressed7 = 0;
+  int pressed8 = 0;
+  int pressed9 = 0;
+  int pressed10 = 0;
+  int pressed11 = 0;
+  int pressed12 = 0;
 
   // ========================================================================
   // Constructor
@@ -72,6 +78,13 @@ class Level {
     if (foodLvl01.getSelectedFood()==5) {
       if (pressed5 < 3) {
         firstLevelFood2();
+        foodLvl01.changeSelectedFoodToNothing();
+        pressed5++;
+      }
+    }
+    if (foodLvl01.getSelectedFood()==6) {
+      if (pressed6 < 3) {
+        firstLevelFood3();
         foodLvl01.changeSelectedFoodToNothing();
         pressed5++;
       }
