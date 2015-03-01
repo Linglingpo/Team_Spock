@@ -37,7 +37,7 @@ class Spock {
   }
 
   void emoBar() {
-    fill(0, 0, 255);
+    fill(0, 167, 189);
     noStroke();
     int rectHeight = 150;
     //Heath Bar
@@ -90,7 +90,7 @@ class Spock {
 
 
   void heathBar() {
-    fill(0, 255, 0);
+    fill(0, 167, 189);
     noStroke();
     int rectHeight = 150;
     //Heath Bar

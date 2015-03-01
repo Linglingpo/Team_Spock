@@ -22,12 +22,16 @@ class Level {
   int pressed10 = 0;
   int pressed11 = 0;
   int pressed12 = 0;
-  
-  String[] facesPath = {"spock_angry.png","spock_med.png","spock_regular.png"};
+
+  String[] facesPath = {
+    "spock_angry.png", "spock_med.png", "spock_regular.png"
+  };
   PImage[] spockImages = new PImage[facesPath.length];
-  String[] healthPath = {"health_bad.png", "health_good.png"};
+  String[] healthPath = {
+    "health_bad.png", "health_good.png"
+  };
   PImage[] healthImages = new PImage[healthPath.length];
-  
+
 
   // ========================================================================
   // Constructor
@@ -155,6 +159,27 @@ class Level {
     }
     //-- Lvl 01 --//
     else if (scene == 1) {
+<<<<<<< HEAD
+      if (gmaeTimerSec > endTimeSec) {
+        scene = 2;
+      } else {
+        player.pause();
+        playerLvl01.play();
+        //player = minim.loadFile("ambient_during_game.mp3");
+        //display spock
+        spockLvl01.display();
+        displayLevel01();
+        if (spockLvl01.getEmo() > 65) {
+          image(spockImages[2], 1090, 30, 100, 100);
+        }
+        if (spockLvl01.getEmo() >= 45) {
+          image(spockImages[1], 1090, 30, 100, 100);
+        }
+        if (spockLvl01.getEmo() < 45) {
+          image(spockImages[0], 1090, 30, 100, 100);
+        }
+        if (spockLvl01.getHearts() >= 5) {
+=======
       player.pause();
       playerLvl01.play();
       //player = minim.loadFile("ambient_during_game.mp3");
@@ -171,16 +196,21 @@ class Level {
          image(spockImages[2], 1090, 30, 100, 100);    
       }
       if (spockLvl01.getHearts() >= 5) {
+>>>>>>> origin/master
           image(healthImages[1], 900, 40, 75, 75);
-      }
-      if (spockLvl01.getHearts() < 5) {
+        }
+        if (spockLvl01.getHearts() < 5) {
           image(healthImages[0], 900, 40, 75, 75);
+        }
       }
-  
     }
-    //-- Lvl 02 --//
-    else {
-      //do noting yet
+    //-- Win/Lost --//
+    else if (scene == 2) {
+      if (spockLvl01.hearts >= 7 && spockLvl01.emo >= 70) {
+        image(winImg, 0, 0, width, height);
+      } else {
+        image(lostImg, 0, 0, width, height);
+      }
     }
   }
 
