@@ -163,8 +163,7 @@ class Level {
 
   //-- level 01 --//
   void displayLevel01() {
-    //change the bg
-    sceneBg = loadImage("background.png");
+    sceneBg = loadImage("background3.png");
     foodLvl01.run();
     //if selected some food
     if (nowSpockOn) {
