@@ -13,7 +13,7 @@ class Food {
   //Timer
   int savedTime;
   //3 sec
-  int slidTime = 3000;
+  int slidTime = 4000;
 
   boolean selectinfFood = false;
   int selectedFoodCounter = -1;
@@ -57,10 +57,7 @@ class Food {
     timertest1++;
     //Timer
     int passedTime = millis() - savedTime;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     //For display/slid the image
     image(foodImages[imageIndex], 290, 280, 280, 280);    
     if (passedTime > slidTime) {
@@ -70,21 +67,18 @@ class Food {
     if (imageIndex>foodBasket.length-1) {
       imageIndex = 0;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     displayInfoFB01();
     startLvl1 = true;
-    if (timertest1 >= timertest) {   
-      if (passedTime > slidTime) {
-        imageIndex++;
-        savedTime = millis();
-      }
-      if (imageIndex>foodBasket.length-1) {
-        imageIndex = 0;
-      }
-    }
+//    if (timertest1 >= timertest) {   
+//      if (passedTime > slidTime) {
+//        imageIndex++;
+//        savedTime = millis();
+//      }
+//      if (imageIndex>foodBasket.length-1) {
+//        imageIndex = 0;
+//      }
+//    }
     //For display/slid the image
     //image(foodImages[imageIndex], 0, 0, 200, 200);
   }
