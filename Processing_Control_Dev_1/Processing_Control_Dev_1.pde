@@ -25,17 +25,18 @@ import ddf.minim.*;
 Minim minim;
 //variable to the audio player
 AudioPlayer player;
-
+AudioPlayer playerLvl01;
 
 void setup() {
-  
-    /*-------------------------------------------
+
+  /*-------------------------------------------
    Background Music
    -------------------------------------------*/
   //initialize the music player
   minim = new Minim(this);
   //loading the music file from the data folder
   player = minim.loadFile("beginning_background.mp3");
+  playerLvl01 = minim.loadFile("ambient_during_game.mp3");
   //calling play() function from "Minim" to play the music
   player.play();
 
