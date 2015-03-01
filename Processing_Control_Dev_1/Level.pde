@@ -155,6 +155,9 @@ class Level {
     }
     //-- Lvl 01 --//
     else if (scene == 1) {
+      player.pause();
+      playerLvl01.play();
+      //player = minim.loadFile("ambient_during_game.mp3");
       //display spock
       spockLvl01.display();
       displayLevel01();
@@ -248,19 +251,19 @@ class Level {
   void firstLevelFood8() {
     println("You selected the first item!"); 
     spockLvl01.changeHearts(1);
-     spockLvl01.changeEmo(30); // 
+    spockLvl01.changeEmo(30); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood9() {
     println("You selected the first item!"); 
     spockLvl01.changeHearts(-1);
-     spockLvl01.changeEmo(-30); // 
+    spockLvl01.changeEmo(-30); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood10() {
     println("You selected the first item!"); 
     spockLvl01.changeHearts(1);
-   spockLvl01.changeEmo(10); // 
+    spockLvl01.changeEmo(10); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood11() {
@@ -272,7 +275,7 @@ class Level {
   void firstLevelFood12() {
     println("You selected the first item!"); 
     spockLvl01.changeHearts(2);
-   spockLvl01.changeEmo(20); // 
+    spockLvl01.changeEmo(20); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
 }// end of the "Level" class
