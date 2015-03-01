@@ -1,5 +1,6 @@
 PImage keyGraphic;
 PImage sceneBg;
+PImage bgMask;
 
 boolean[] activeKeys = new boolean[3];
 Boolean nowSpockOn = false;
@@ -12,12 +13,38 @@ boolean selectedFood = false;
 Level levels;
 Spock spock;
 
+/*-------------------------------------------
+ Background Music
+ * Ref links: http://soundbible.com
+ * http://code.compartmental.net/tools/minim/quickstart/
+ -------------------------------------------*/
+//import external Minim library
+import ddf.minim.*;
+//instantiate the Minim Object
+Minim minim;
+//variable to the audio player
+AudioPlayer player;
+
+
 void setup() {
+  
+    /*-------------------------------------------
+   Background Music
+   -------------------------------------------*/
+  //initialize the music player
+  minim = new Minim(this);
+  //loading the music file from the data folder
+  player = minim.loadFile("beginning_background.mp3");
+  //calling play() function from "Minim" to play the music
+  player.play();
+
+
   size(1280, 800);
   textSize(50);
   fill(255);
   sceneBg = loadImage("start_screen.png");
- // keyGraphic = loadImage("start_scene.png");
+  bgMask = loadImage("background3.png");
+  // keyGraphic = loadImage("start_scene.png");
   levels = new Level();
   spock = new Spock();
 }
@@ -26,15 +53,9 @@ void draw() {
   background(100);
   keyEventControl();
   levels.run();
-    heathBar();
   //levels.display();
 }
 
-void heathBar() {
-  fill(0, 255, 0);
-  noStroke();
-  rect(0, 0, width, 150);
-}
 
 //------------ Key Event ------------//
 void keyPressed() {

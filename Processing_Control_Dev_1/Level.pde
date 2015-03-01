@@ -144,9 +144,9 @@ class Level {
     }
     //-- Lvl 01 --//
     else if (scene == 1) {
-      displayLevel01();
       //display spock
       spockLvl01.display();
+      displayLevel01();
     }
     //-- Lvl 02 --//
     else {
@@ -157,13 +157,13 @@ class Level {
   //-- Intro --//
   void displayIntro() {
     //load the intro bg
-      sceneBg = loadImage("start_screen.png");
+    sceneBg = loadImage("start_screen.png");
   }
 
 
   //-- level 01 --//
   void displayLevel01() {
-    sceneBg = loadImage("background3.png");
+    sceneBg = loadImage("background.png");
     foodLvl01.run();
     //if selected some food
     if (nowSpockOn) {
