@@ -19,8 +19,8 @@ class Spock {
   void display() {
     heathBar();
     emoBar();
-    text(hearts, 700, 200);
-    text(emo, 700, 400);
+    //text(hearts, 700, 200);
+    //text(emo, 700, 400);
 
     if (hearts > 10) {
       hearts = 10;
