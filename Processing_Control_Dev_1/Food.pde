@@ -4,7 +4,7 @@ class Food {
   // ========================================================================
 
   String[] foodBasketLvl01 = {
-    "salmon.png", "alien meat.png", "chocolate.png", "pancakes.png", "sushi.png", "tart.png"
+    "chocolate.png", "gespar.png", "salmon.png", "alien meat.png", "vulcan mollusk.png", "pancakes.png", "sushi.png", "tart.png", "tea.png", "filet mignon.png", "cheese.png", "vulcan lettuce.png", 
   }; 
   boolean[] booleanFB01 = new boolean [foodBasketLvl01.length];
 
@@ -46,9 +46,12 @@ class Food {
     timertest1++;
     //Timer
     int passedTime = millis() - savedTime;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     //For display/slid the image
-    image(foodImages[imageIndex], 300, 300, 250, 250);    
+    image(foodImages[imageIndex], 290, 280, 280, 280);    
     if (passedTime > slidTime) {
       imageIndex++;
       savedTime = millis();
@@ -56,7 +59,10 @@ class Food {
     if (imageIndex>foodBasketLvl01.length-1) {
       imageIndex = 0;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     displayInfoFB01();
     startLvl1 = true;
     if (timertest1 >= timertest) {   
@@ -69,7 +75,7 @@ class Food {
       }
     }
     //For display/slid the image
-    image(foodImages[imageIndex], 0, 0, 200, 200);
+    //image(foodImages[imageIndex], 0, 0, 200, 200);
   }
 
   void displayInfoFB01() {
