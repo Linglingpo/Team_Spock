@@ -77,16 +77,51 @@ class Level {
     }
     if (foodLvl01.getSelectedFood()==5) {
       if (pressed5 < 3) {
-        firstLevelFood2();
+        firstLevelFood6();
         foodLvl01.changeSelectedFoodToNothing();
         pressed5++;
       }
     }
     if (foodLvl01.getSelectedFood()==6) {
       if (pressed6 < 3) {
-        firstLevelFood3();
+        firstLevelFood7();
         foodLvl01.changeSelectedFoodToNothing();
-        pressed5++;
+        pressed6++;
+      }
+    }
+    if (foodLvl01.getSelectedFood()==7) {
+      if (pressed7 < 3) {
+        firstLevelFood8();
+        foodLvl01.changeSelectedFoodToNothing();
+        pressed7++;
+      }
+    }
+    if (foodLvl01.getSelectedFood()==8) {
+      if (pressed8 < 3) {
+        firstLevelFood9();
+        foodLvl01.changeSelectedFoodToNothing();
+        pressed8++;
+      }
+    }
+    if (foodLvl01.getSelectedFood()==9) {
+      if (pressed7 < 3) {
+        firstLevelFood10();
+        foodLvl01.changeSelectedFoodToNothing();
+        pressed9++;
+      }
+    }
+    if (foodLvl01.getSelectedFood()==10) {
+      if (pressed10 < 3) {
+        firstLevelFood11();
+        foodLvl01.changeSelectedFoodToNothing();
+        pressed10++;
+      }
+    }
+    if (foodLvl01.getSelectedFood()==11) {
+      if (pressed11 < 3) {
+        firstLevelFood12();
+        foodLvl01.changeSelectedFoodToNothing();
+        pressed11++;
       }
     }
   }
@@ -122,7 +157,7 @@ class Level {
   //-- Intro --//
   void displayIntro() {
     //load the intro bg
-    sceneBg = loadImage("start_screen.png");
+      sceneBg = loadImage("start_screen.png");
   }
 
 
@@ -144,22 +179,26 @@ class Level {
   }
   void firstLevelFood1() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(-2); // 
+    spockLvl01.changeHearts(1); 
+    spockLvl01.changeEmo(30); 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood2() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(1); // 
+    spockLvl01.changeHearts(2);
+    spockLvl01.changeEmo(5);
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood3() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(-1); // 
+    spockLvl01.changeHearts(1);
+    spockLvl01.changeEmo(-50); 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood4() {
     println("You selected the first item!"); 
-    spockLvl01.changeHearts(-3); // 
+    spockLvl01.changeHearts(-1);
+    spockLvl01.changeEmo(20); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood5() {
@@ -168,6 +207,36 @@ class Level {
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
   }
   void firstLevelFood6() {
+    println("You selected the first item!"); 
+    spockLvl01.changeHearts(2); // 
+    println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
+  }
+  void firstLevelFood7() {
+    println("You selected the first item!"); 
+    spockLvl01.changeHearts(2); // 
+    println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
+  }
+  void firstLevelFood8() {
+    println("You selected the first item!"); 
+    spockLvl01.changeHearts(2); // 
+    println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
+  }
+  void firstLevelFood9() {
+    println("You selected the first item!"); 
+    spockLvl01.changeHearts(2); // 
+    println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
+  }
+  void firstLevelFood10() {
+    println("You selected the first item!"); 
+    spockLvl01.changeHearts(2); // 
+    println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
+  }
+  void firstLevelFood11() {
+    println("You selected the first item!"); 
+    spockLvl01.changeHearts(2); // 
+    println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");
+  }
+  void firstLevelFood12() {
     println("You selected the first item!"); 
     spockLvl01.changeHearts(2); // 
     println("YUM YUM YOU KNOW HAVE " + spockLvl01.getHearts() + " HEARTS");

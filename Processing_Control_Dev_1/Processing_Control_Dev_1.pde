@@ -16,8 +16,8 @@ void setup() {
   size(1280, 800);
   textSize(50);
   fill(255);
-  sceneBg = loadImage("intro.jpg");
-  keyGraphic = loadImage("start.png");
+  sceneBg = loadImage("start_screen.png");
+ // keyGraphic = loadImage("start_scene.png");
   levels = new Level();
 }
 

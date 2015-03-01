@@ -3,12 +3,11 @@ class Food {
   // Properties
   // ========================================================================
 
-  String[] foodBasketLvl01 = {
-    "chocolate.png", "gespar.png", "salmon.png", "alien meat.png", "vulcan mollusk.png", "pancakes.png", "sushi.png", "tart.png", "tea.png", "filet mignon.png", "cheese.png", "vulcan lettuce.png", 
-  }; 
-  boolean[] booleanFB01 = new boolean [foodBasketLvl01.length];
+  String[] foodBasket = new String[12];
+  
+  boolean[] booleanFB01 = new boolean [foodBasket.length];
 
-  PImage[] foodImages = new PImage[foodBasketLvl01.length];
+  PImage[] foodImages = new PImage[foodBasket.length];
   int imageIndex = 0;
 
   //Timer
@@ -31,9 +30,21 @@ class Food {
     //spockLvl01 = new Spock();
     //Timer
     savedTime = millis();
-    for (int i = 0; i<foodBasketLvl01.length; i++)
+    foodBasket[0] = "chocolate.png";
+    foodBasket[1] = "salmon.png";
+    foodBasket[2] = "alien_meat.png";
+    foodBasket[3] = "vulcan_mollusk.png";    
+    foodBasket[4] = "pancakes.png";
+    foodBasket[5] = "sushi.png";
+    foodBasket[6] = "tart.png";
+    foodBasket[7] = "tea.png";
+    foodBasket[8] = "fillet_mignon.png";
+    foodBasket[9] = "cheese.png";
+    foodBasket[10] = "vulcan_lettuce.png";
+    foodBasket[11] = "gespar.png";
+    for (int i = 0; i<foodBasket.length; i++)
     { 
-      foodImages[i] = loadImage(foodBasketLvl01[i]);
+      foodImages[i] = loadImage(foodBasket[i]);
       booleanFB01[i] = false;
     }
   }  
@@ -52,7 +63,7 @@ class Food {
       imageIndex++;
       savedTime = millis();
     }
-    if (imageIndex>foodBasketLvl01.length-1) {
+    if (imageIndex>foodBasket.length-1) {
       imageIndex = 0;
     }
     displayInfoFB01();
@@ -62,7 +73,7 @@ class Food {
         imageIndex++;
         savedTime = millis();
       }
-      if (imageIndex>foodBasketLvl01.length-1) {
+      if (imageIndex>foodBasket.length-1) {
         imageIndex = 0;
       }
     }

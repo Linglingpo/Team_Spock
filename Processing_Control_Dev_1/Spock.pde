@@ -10,7 +10,7 @@ class Spock {
   // Constructor
   // ========================================================================
   Spock() {
-    hearts = 6; // maximum hearts
+    hearts = 6; // medium hearts
     emo = 50; // medium happiness
   }
   // ========================================================================
@@ -19,6 +19,20 @@ class Spock {
   void display() {
     text(hearts, 700, 200);
     text(emo, 700, 400);
+    
+      if (hearts > 10) {
+        hearts = 10;
+      }
+      if (emo > 100) {
+        emo = 100;
+      }
+      if (hearts < 0) {
+        hearts = 0;
+      }
+      if (emo < 0) {
+        emo = 0;
+      }
+      
   }
 
   //----- update heart -----//
