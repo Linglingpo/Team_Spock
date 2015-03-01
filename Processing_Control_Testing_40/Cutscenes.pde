@@ -1,4 +1,4 @@
-class Level {
+class Cutscenes {
   // ========================================================================
   // Properties
   // ========================================================================
@@ -32,7 +32,7 @@ class Level {
  
     //-- Cut Scene 1 --//
     else if (cutsceneCount == 1) {
-      displayCutscene1();
+      displayCutScene1();
     }
     //-- Lvl 02 --//
     else {

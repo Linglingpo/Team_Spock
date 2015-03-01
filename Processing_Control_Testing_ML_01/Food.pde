@@ -10,45 +10,53 @@ class Food {
 
   PImage[] foodImages = new PImage[foodBasketLvl01.length];
   int imageIndex = 0;
-  
+
   //Timer
   int savedTime;
   //3 sec
   int slidTime = 3000;
-  
   int heart = 0;
+
+  int timertest = 50;
+  int timertest1 = 0;
+
+  boolean startLvl1;
+
   // ========================================================================
   // Constructor
   // ========================================================================
   Food() {
     //Timer
     savedTime = millis();
-    
-      for (int i = 0; i<foodBasketLvl01.length; i++)
-      { 
-        foodImages[i] = loadImage(foodBasketLvl01[i]);
-        booleanFB01[i] = false;
-      }
-    //}
+    for (int i = 0; i<foodBasketLvl01.length; i++)
+    { 
+      foodImages[i] = loadImage(foodBasketLvl01[i]);
+      booleanFB01[i] = false;
+    }
   }  
 
   // ========================================================================
   // Methods
   // ========================================================================
   void run() {
+    timertest1++;
     //Timer
     int passedTime = millis() - savedTime;
-    //For display/slid the image
-      image(foodImages[imageIndex], 0, 0, 200, 200);    
-    if (passedTime > slidTime) {
-      imageIndex++;
-      savedTime = millis();
-    }
-    if (imageIndex>foodBasketLvl01.length-1) {
-      imageIndex = 0;
-    }
     displayInfoFB01();
+    startLvl1 = true;
+    if (timertest1 >= timertest) {
+    if (passedTime > slidTime) {
+        imageIndex++;
+        savedTime = millis();
+      }
+      if (imageIndex>foodBasketLvl01.length-1) {
+        imageIndex = 0;
+      }
+    }
+    image(foodImages[imageIndex], 0, 0);  
   }
+
+
 
   void displayInfoFB01() {
     int infoX = 10;
@@ -56,7 +64,6 @@ class Food {
     if (booleanFB01[0]) {
       text("Food 01 is ON", infoX, infoY);
     }
-
     if (booleanFB01[1]) {
       text("Food 02 is ON", infoX, infoY*2);
     }
