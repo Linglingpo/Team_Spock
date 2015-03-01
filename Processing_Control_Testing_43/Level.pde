@@ -3,11 +3,6 @@ class Level {
   // Properties
   // ========================================================================
   boolean startLvl01 = false;
-
-  int timertest = 20;
-  int timertest1 = 0;
-  boolean pause;
-
   /*-------- Calling other class -----------*/
   Food foodLvl01;
 
@@ -15,13 +10,13 @@ class Level {
   // Constructor
   // ========================================================================
   Level() {
+    foodLvl01 = new Food();
   }  
 
   // ========================================================================
   // Methods
   // ========================================================================
   void run() {
-    foodLvl01 = new Food();
   }
 
 
@@ -35,28 +30,14 @@ class Level {
       displayIntro ();
       if (nowSpockOn) {
         scene = 1;
-        //change the bg
-        sceneBg = loadImage("lvl_01.jpg");
         nowSpockOn = false;
-        pause = true;
       }
+      //Reset the lvl01 food selected timer
+      foodLvl01.savedTime = millis();
     }
     //-- Lvl 01 --//
     else if (scene == 1) {
-      if (pause) {
-        timertest1++;
-        if (timertest1 >= timertest) {
-          //Reset the lvl01 food selected timer
-          foodLvl01.savedTime = millis();
-          timertest1 = 0;
-          pause = false;
-        }
-      }
-      if (timertest1 == 0) {
-        displayLevel01();
-        foodLvl01.run();
-        println(timertest1);
-      }
+      displayLevel01();
     }
     //-- Lvl 02 --//
     else {
@@ -73,12 +54,17 @@ class Level {
 
   //-- level 01 --//
   void displayLevel01() {
+    //change the bg
+    sceneBg = loadImage("lvl_01.jpg");
+    foodLvl01.run();
     //if selected some food
     if (nowSpockOn) {
       //For boolean Array in FB01
       //Selected which food in level 01
+      if (foodLvl01.startLvl1) {
       foodLvl01.booleanFB01[foodLvl01.imageIndex] = true;
       printArray(foodLvl01.booleanFB01);
+      }
       //food.updateHearts();
       nowSpockOn = false;
     }
