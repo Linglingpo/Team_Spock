@@ -10,11 +10,15 @@ class Food {
 
   PImage[] foodImages = new PImage[foodBasketLvl01.length];
   int imageIndex = 0;
-
+  
   //Timer
   int savedTime;
   //3 sec
   int slidTime = 3000;
+  
+  int timertest = 20;
+  int timertest1 = 0;
+  
   int heart = 0;
   // ========================================================================
   // Constructor
@@ -22,11 +26,13 @@ class Food {
   Food() {
     //Timer
     savedTime = millis();
-    for (int i = 0; i<foodBasketLvl01.length; i++)
-    { 
-      foodImages[i] = loadImage(foodBasketLvl01[i]);
-      booleanFB01[i] = false;
-    }
+    
+      for (int i = 0; i<foodBasketLvl01.length; i++)
+      { 
+        foodImages[i] = loadImage(foodBasketLvl01[i]);
+        booleanFB01[i] = false;
+      }
+    //}
   }  
 
   // ========================================================================
@@ -36,7 +42,9 @@ class Food {
     //Timer
     int passedTime = millis() - savedTime;
     //For display/slid the image
-    image(foodImages[imageIndex], 0, 0, 200, 200);    
+    if (timertest1 >= timertest) {
+      image(foodImages[imageIndex], 0, 0, 200, 200);    
+    }
     if (passedTime > slidTime) {
       imageIndex++;
       savedTime = millis();
@@ -45,7 +53,7 @@ class Food {
       imageIndex = 0;
     }
     displayInfoFB01();
-
+    timertest1++;
   }
 
   void displayInfoFB01() {
