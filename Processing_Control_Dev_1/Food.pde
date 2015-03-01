@@ -46,10 +46,7 @@ class Food {
     timertest1++;
     //Timer
     int passedTime = millis() - savedTime;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     //For display/slid the image
     image(foodImages[imageIndex], 290, 280, 280, 280);    
     if (passedTime > slidTime) {
@@ -59,10 +56,7 @@ class Food {
     if (imageIndex>foodBasketLvl01.length-1) {
       imageIndex = 0;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     displayInfoFB01();
     startLvl1 = true;
     if (timertest1 >= timertest) {   
