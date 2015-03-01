@@ -10,7 +10,7 @@ class Food {
 
   PImage[] foodImages = new PImage[foodBasketLvl01.length];
   int imageIndex = 0;
-  
+
   //Timer
   int savedTime;
   //3 sec
@@ -19,6 +19,10 @@ class Food {
   boolean selectinfFood = false;
   int selectedFoodCounter = -1;
   //Spock spockLvl01;
+
+  int timertest = 50;
+  int timertest1 = 0;
+  boolean startLvl1;
 
   // ========================================================================
   // Constructor
@@ -38,8 +42,12 @@ class Food {
   // Methods
   // ========================================================================
   void run() {
+
+    timertest1++;
     //Timer
     int passedTime = millis() - savedTime;
+<<<<<<< HEAD
+=======
     //For display/slid the image
     image(foodImages[imageIndex], 300, 300, 250, 250);    
     if (passedTime > slidTime) {
@@ -49,7 +57,20 @@ class Food {
     if (imageIndex>foodBasketLvl01.length-1) {
       imageIndex = 0;
     }
+>>>>>>> origin/master
     displayInfoFB01();
+    startLvl1 = true;
+    if (timertest1 >= timertest) {   
+      if (passedTime > slidTime) {
+        imageIndex++;
+        savedTime = millis();
+      }
+      if (imageIndex>foodBasketLvl01.length-1) {
+        imageIndex = 0;
+      }
+    }
+    //For display/slid the image
+    image(foodImages[imageIndex], 0, 0, 200, 200);
   }
 
   void displayInfoFB01() {
@@ -64,7 +85,7 @@ class Food {
     if (booleanFB01[1]) {
       text("Food 02 is ON", infoX, infoY*2);
       selectedFoodCounter = 1;
-       booleanFB01[1] = false;
+      booleanFB01[1] = false;
     }
     if (booleanFB01[2]) {
       text("Food 03 is ON", infoX, infoY*3);
@@ -87,13 +108,12 @@ class Food {
       booleanFB01[5] = false;
     }
   }
- 
- int getSelectedFood() {
-   return selectedFoodCounter;
- }
- void changeSelectedFoodToNothing() {
-   selectedFoodCounter = -1;
- } 
-  
+
+  int getSelectedFood() {
+    return selectedFoodCounter;
+  }
+  void changeSelectedFoodToNothing() {
+    selectedFoodCounter = -1;
+  }
 }//end of Food class
 

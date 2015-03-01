@@ -19,7 +19,6 @@ class Food {
 
   int timertest = 50;
   int timertest1 = 0;
-
   boolean startLvl1;
 
   // ========================================================================
