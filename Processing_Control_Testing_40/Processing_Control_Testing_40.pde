@@ -7,7 +7,7 @@ Boolean nowSpockOn = false;
 int scene = 0;
 
 //food selection
-boolean selectedFood01 = false;
+boolean selectedFood = false;
 
 Level levels;
 
@@ -23,8 +23,8 @@ void setup() {
 
 void draw() {
   background(100);
-  //  changeScenes();
   keyEventControl();
+  levels.run();
   levels.display();
 }
 
@@ -63,7 +63,8 @@ void keyReleased() {
 void keyEventControl() {
   if (activeKeys[0] == true && activeKeys[1] == false && activeKeys[2] == true) {
     nowSpockOn = true;
-  } else {
+  } 
+  else {
     nowSpockOn = false;
   }
   //  printArray(activeKeys);
