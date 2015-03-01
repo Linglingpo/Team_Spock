@@ -159,32 +159,9 @@ class Level {
     }
     //-- Lvl 01 --//
     else if (scene == 1) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 9fb8c5e9166f18a4e236eea086f17e85f37d9f57
       if (gmaeTimerSec > endTimeSec) {
         scene = 2;
       } else {
-        player.pause();
-        playerLvl01.play();
-<<<<<<< HEAD
-=======
-        //player = minim.loadFile("ambient_during_game.mp3");
-        //display spock
-        spockLvl01.display();
-        displayLevel01();
-        if (spockLvl01.getEmo() > 65) {
-          image(spockImages[2], 1090, 30, 100, 100);
-        }
-        if (spockLvl01.getEmo() >= 45) {
-          image(spockImages[1], 1090, 30, 100, 100);
-        }
-        if (spockLvl01.getEmo() < 45) {
-          image(spockImages[0], 1090, 30, 100, 100);
-        }
-        if (spockLvl01.getHearts() >= 5) {
-<<<<<<< HEAD
           player.pause();
           playerLvl01.play();
           //player = minim.loadFile("ambient_during_game.mp3");
@@ -207,36 +184,6 @@ class Level {
             image(healthImages[0], 900, 40, 75, 75);
           }
         }//end of get Heart
-=======
-
-      player.pause();
-      playerLvl01.play();
->>>>>>> 9fb8c5e9166f18a4e236eea086f17e85f37d9f57
-      //player = minim.loadFile("ambient_during_game.mp3");
-      //display spock
-      spockLvl01.display();
-      displayLevel01();
-      if (spockLvl01.getEmo() < 45) {
-         image(spockImages[0], 1090, 30, 100, 100);    
-      }
-      if (spockLvl01.getEmo() >= 45) {
-         image(spockImages[1], 1090, 30, 100, 100);    
-      }
-      if (spockLvl01.getEmo() > 65) {
-         image(spockImages[2], 1090, 30, 100, 100);    
-      }
-      if (spockLvl01.getHearts() >= 5) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 9fb8c5e9166f18a4e236eea086f17e85f37d9f57
-          image(healthImages[1], 900, 40, 75, 75);
-        }
-        if (spockLvl01.getHearts() < 5) {
-          image(healthImages[0], 900, 40, 75, 75);
-        }
->>>>>>> origin/master
-      }
     }
     //-- Win/Lost --//
     else if (scene == 2) {
