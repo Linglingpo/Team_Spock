@@ -22,6 +22,12 @@ class Level {
   int pressed10 = 0;
   int pressed11 = 0;
   int pressed12 = 0;
+  
+  String[] facesPath = {"spock_angry.png","spock_med.png","spock_regular.png"};
+  PImage[] spockImages = new PImage[facesPath.length];
+  String[] healthPath = {"health_bad.png", "health_good.png"};
+  PImage[] healthImages = new PImage[healthPath.length];
+  
 
   // ========================================================================
   // Constructor
@@ -29,6 +35,11 @@ class Level {
   Level() {
     foodLvl01 = new Food();
     spockLvl01 = new Spock();
+    spockImages[0] = loadImage(facesPath[0]);
+    spockImages[1] = loadImage(facesPath[1]);
+    spockImages[2] = loadImage(facesPath[2]);
+    healthImages[0] = loadImage(healthPath[0]);
+    healthImages[1] = loadImage(healthPath[1]);
   }  
 
   // ========================================================================
@@ -147,6 +158,22 @@ class Level {
       //display spock
       spockLvl01.display();
       displayLevel01();
+      if (spockLvl01.getEmo() > 65) {
+         image(spockImages[2], 1090, 30, 100, 100);    
+      }
+      if (spockLvl01.getEmo() >= 45) {
+         image(spockImages[1], 1090, 30, 100, 100);    
+      }
+      if (spockLvl01.getEmo() < 45) {
+         image(spockImages[0], 1090, 30, 100, 100);    
+      }
+      if (spockLvl01.getHearts() >= 5) {
+          image(healthImages[1], 900, 40, 75, 75);
+      }
+      if (spockLvl01.getHearts() < 5) {
+          image(healthImages[0], 900, 40, 75, 75);
+      }
+  
     }
     //-- Lvl 02 --//
     else {
