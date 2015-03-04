@@ -189,7 +189,7 @@ class Level {
     else if (scene == 2) {
       player.pause();
       playerLvl01.pause();
-      if (spockLvl01.hearts >= 7 && spockLvl01.emo >= 70) {
+      if (spockLvl01.hearts >= 7 && spockLvl01.emo >= 60) {
         image(winImg, 0, 0, width, height);
         playerWin.play();
       } else {
